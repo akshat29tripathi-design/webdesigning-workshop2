@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even and odd checker</title>
+    <style>
+        .box{
+            margin-top: auto;
+            margin: auto;
+            text-align: center;
+            background-color: yellow;
+            width: 200px;
+            border: 5px solid black;
+
+    </style>
+</head>
+<body>
+    <center><h2>Even and Order number checker.</h2></center>
+    <div class="box">
+        <input type="number" placeholder="Enter a no." id="number">
+        <button onclick="Even_odd()">Find out</button>
+        <h3 id="output"></h3>
+    </div>
+    <script>
+        function Even_odd()
+        {
+            let n = parseInt(document.getElementById("number").value);
+            let a="";
+            if(n%2==0)
+        {
+            a="The number is even";
+        }
+        else
+        {
+            a="The number is odd";
+        }
+        document.getElementById("output").innerHTML=a;
+        }
+
+    </script>
+</body>
+</html>
