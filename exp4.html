@@ -1,0 +1,99 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>EXPERIMENT 4</title> 
+<style>
+    body{ 
+    margin:0; 
+    height:100vh; 
+    display:flex; 
+    justify-content:center; 
+    align-items:center; 
+    font-family: Arial, sans-serif; 
+    background-color:#0a426f; 
+} 
+.container{ 
+    background:white; 
+    padding:30px; 
+    border-radius:10px; 
+    box-shadow:0 0 10px rgba(0,0,0,0.2); 
+    text-align:center; 
+} 
+input{ 
+    padding:8px; 
+    width:200px; 
+} 
+button{ 
+    padding:8px 15px; 
+    background-color:#007BFF; 
+    color:white; 
+    border:none; 
+    border-radius:5px; 
+    cursor:pointer; 
+} 
+ 
+button:hover{ 
+background-color:#0056b3; 
+} 
+#result{ 
+margin-top:15px; 
+font-weight:bold; 
+}
+</style>
+</head> 
+<body> 
+<div class="container"> 
+<h1>Student Registration Calculator</h1> 
+<label for="subjects">Enter Number of Subjects</label><br> 
+<input type="number" id="subjects" required><br><br> 
+<button onclick="calculateresult()" id="calculate">Calculate</button> 
+<div id="result"></div> 
+</div> 
+<script>
+    function calculateresult(){ 
+    let n=document.getElementById("subjects").value; 
+    let total=0; 
+ 
+    for (let i=1;i<=n;i++){ 
+        let marks=parseFloat(prompt("enter marks for subject "+i)); 
+        total=total+marks; 
+    } 
+ let average=total/n; 
+    let grade; 
+    let result; 
+if(average>=90){ 
+        grade="A+"; 
+        result="Pass"; 
+    } 
+    else if(average>=75){ 
+        grade="A"; 
+        result="Pass"; 
+    } 
+    else if(average>=60){ 
+        grade="B"; 
+        result="Pass"; 
+    } 
+    else if(average>=50){ 
+        grade="C"; 
+        result="Pass"; 
+    } 
+    else if(average>=40){ 
+        grade="D"; 
+        result="Fail"; 
+} 
+else{ 
+grade="F"; 
+result="Fail"; 
+} 
+document.getElementById("result").innerHTML= 
+"Total Marks :"+ total + "<br>" + 
+"Average Marks:" + average.toFixed(2) + "<br>" + 
+"Grade: " + grade + "<br>" + 
+"Result: " + result; 
+} 
+
+</script> 
+</body> 
+</html>
