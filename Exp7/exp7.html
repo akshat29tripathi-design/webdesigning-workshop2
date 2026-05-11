@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Info</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      background: #f4f4f4;
+    }
+
+    .container {
+      width: 300px;
+      margin: auto;
+    }
+
+    .card {
+      background: white;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+
+<body>
+
+<h2>Student Information</h2>
+<div class="container" id="studentContainer"></div>
+
+<script>
+  const students = [
+    { name: "Rahul Sharma", course: "Computer Science", marks: 85 },
+    { name: "Anita Verma", course: "Information Technology", marks: 92 },
+    { name: "Rohan Gupta", course: "Electronics", marks: 78 }
+  ];
+
+  const container = document.getElementById("studentContainer");
+
+  for (let i = 0; i < students.length; i++) {
+    let card = document.createElement("div");
+    card.className = "card";
+
+    card.innerHTML = `
+      <h3>${students[i].name}</h3>
+      <p>Course: ${students[i].course}</p>
+      <p>Marks: ${students[i].marks}</p>
+    `;
+
+    container.appendChild(card);
+  }
+</script>
+
+</body>
+</html>
